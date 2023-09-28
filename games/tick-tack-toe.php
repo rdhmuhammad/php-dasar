@@ -22,7 +22,7 @@
 
         }
 
-        .container > div {
+        .container > button {
             border-radius: 10%;
             display: flex;
             align-items: center;
@@ -40,7 +40,7 @@
                     transparent 10%);
         }
 
-        .container > div {
+        .container > button:hover {
             font-size: 50px;
             font-family: "Lato Light", serif;
             color: azure;
@@ -49,15 +49,15 @@
 </head>
 <body>
 <div class="container">
-    <div>X</div>
-    <div>O</div>
-    <div></div>
-    <div></div>
-    <div>X</div>
-    <div></div>
-    <div>X</div>
-    <div>X</div>
-    <div></div>
+    <button>X</button>
+    <button>X</button>
+    <button>X</button>
+    <button>O</button>
+    <button>O</button>
+    <button>O</button>
+    <button>O</button>
+    <button>O</button>
+    <button>O</button>
 </div>
 </body>
 </html>
