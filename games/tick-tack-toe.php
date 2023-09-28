@@ -1,4 +1,5 @@
 <?php
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@
             width: 400px;
             grid-template-columns: 30% 30% 30%;
             grid-gap: 15px;
-            background-color: #c0cfcc;
+            background-color: #c4c4c4;
             display: grid;
             padding: 10px;
 
@@ -61,15 +62,15 @@
 </head>
 <body>
 <div class="container">
-    <button>X</button>
-    <button>X</button>
-    <button>X</button>
-    <button>O</button>
-    <button>O</button>
-    <button>O</button>
-    <button>O</button>
-    <button>O</button>
-    <button>O</button>
+    <button id="bt1" onclick=""></button>
+    <button id="bt2"></button>
+    <button id="bt3"></button>
+    <button id="bt4"></button>
+    <button id="bt5"></button>
+    <button id="bt6"></button>
+    <button id="bt7"></button>
+    <button id="bt8"></button>
+    <button id="bt9"></button>
 </div>
 </body>
 </html>
