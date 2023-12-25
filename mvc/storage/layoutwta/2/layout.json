@@ -1,0 +1,73 @@
+[
+  {
+    "layout_name": "L1",
+    "layout_directory": "/layout/L1/",
+    "layout_path_media": {
+      "image": "/L1/assets/img",
+      "video": "/L1/assets/vid",
+      "audio": "/L1/assets/aud"
+    },
+    "layout_folder_source": [
+      "/L1/assets/img",
+      "/L1/assets/vid",
+      "/L1/assets/aud",
+      "/L1/assets/vendor/bootstrap/css",
+      "/L1/assets/vendor/icofont",
+      "/L1/assets/vendor/boxicons",
+      "/L1/assets/vendor/remixicon",
+      "/L1/assets/vendor/venobox",
+      "/L1/assets/vendor/owl.carousel/assets",
+      "/L1/assets/vendor/aos",
+      "/L1/assets/css",
+      "/L1/keyboard",
+      "/L1/css",
+      "/L1/assets/vendor/jquery",
+      "/L1/assets/vendor/bootstrap/js",
+      "/L1/assets/vendor/jquery.easing",
+      "/L1/assets/vendor/php-email-form",
+      "/L1/assets/vendor/waypoints",
+      "/L1/assets/vendor/isotope-layout",
+      "/L1/assets/vendor/owl.carousel",
+      "/L1/assets/js",
+      "/L1/js"
+    ]
+  },
+  {
+    "layout_name": "LDKiri",
+    "layout_directory": "/LDKiri",
+    "layout_path_media": {
+      "image": "/LDKiri/asset/img",
+      "video": "/LDKiri/assets/vid",
+      "audio": "/LDKiri/assets/aud"
+    },
+    "layout_folder_source": [
+      "/LDKiri/keyboard",
+      "/LDKiri/css",
+      "/LDKiri/bootstrap",
+      "/LDKiri/font-awesome",
+      "/LDKiri/js",
+      "/LDKiri/assets/vid",
+      "/LDKiri/assets/aud",
+      "/LDKiri/asset/img"
+    ]
+  },
+  {
+    "layout_name": "LDKanan",
+    "layout_directory": "/LDKanan",
+    "layout_path_media": {
+      "image": "/LDKanan/asset/img",
+      "video": "/LDKanan/assets/vid",
+      "audio": "/LDKanan/assets/aud"
+    },
+    "layout_folder_source": [
+      "/LDKanan/keyboard",
+      "/LDKanan/css",
+      "/LDKanan/bootstrap",
+      "/LDKanan/font-awesome",
+      "/LDKanan/js",
+      "/LDKanan/assets/vid",
+      "/LDKanan/assets/aud",
+      "/LDKanan/asset/img"
+    ]
+  }
+]
