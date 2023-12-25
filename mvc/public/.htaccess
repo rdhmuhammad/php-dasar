@@ -1,0 +1,12 @@
+Options -Multiviews
+
+RewriteEngine On
+# jika url, merupakan folder di abaikan
+RewriteCond %{REQUEST_FILENAME} !-d
+# menghindari nama ketika ada nama folder dan file yang sama dengan method.
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# regex exp mean = ambil apapun satu persatu sampai char selesai
+# kemudian di arahkan ke file index dan url bisa di tambah params
+# [L] jika rule ini terpenuhi, maka jangan lainkan rule lain
+RewriteRule ^(.*)$ index.php?url=$1 [L]

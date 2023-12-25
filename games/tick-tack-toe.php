@@ -1,21 +1,76 @@
 <?php
+// <!--    when I don't define exit at bottom, it will return entire html tag.-->
+session_start();
+$btnList = ["bt1", "bt2", "bt3", "bt4", "bt5", "bt6", "bt7", "bt8", "bt9"];
+$winner = "";
+if (!isset($_SESSION["userMove"])) {
+    $_SESSION["userMove"] = [];
+}
+
+if (!isset($_SESSION["aiMove"])) {
+    $_SESSION["aiMove"] = [];
+}
+
+if (isset($_POST["clear"])) {
+    session_destroy();
+}
+
+
+if (count($_SESSION["userMove"]) < 3 || count($_SESSION["aiMove"]) < 3) {
+    if ((isset($_POST["button"]))) {
+        $btName = $_POST["button"];
+        if (!isset($_SESSION[$btName])) {
+            $_SESSION[$btName] = "X";
+            $_SESSION["userMove"][] = (int)substr($btName, 2);
+            $btNpc = "";
+            do {
+                $npcMove = rand(1, 9);
+                $btNpc = "bt" . $npcMove;
+            } while (isset($_SESSION[$btNpc]));
+            $_SESSION[$btNpc] = "O";
+            $_SESSION["aiMove"][] = (int)substr($btNpc, 2);
+        }
+        if (count($_SESSION["userMove"]) >= 3 || count($_SESSION["aiMove"]) >= 3){
+            endGame();
+        }
+    }
+} else {
+    endGame();
+}
+
+
+function endGame(){
+    global $winner;
+    $userMove = $_SESSION["userMove"];
+    rsort($userMove);
+    for ($i = 0; $i < count($userMove) - 1; $i++) {
+        if (!($userMove[$i] - $userMove[$i + 1] == 1)) {
+            $winner = "";
+            continue;
+        }
+        $winner = "User";
+    }
+}
 
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Tic-Tac-Toe</title>
     <style>
         body {
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-flow: column;
         }
 
         .container {
             height: 400px;
             width: 400px;
             grid-template-columns: 30% 30% 30%;
+            grid-template-rows: 30% 30% 30%;
             grid-gap: 15px;
             background-color: #c4c4c4;
             display: grid;
@@ -61,16 +116,23 @@
     </style>
 </head>
 <body>
-<div class="container">
-    <button id="bt1" onclick=""></button>
-    <button id="bt2"></button>
-    <button id="bt3"></button>
-    <button id="bt4"></button>
-    <button id="bt5"></button>
-    <button id="bt6"></button>
-    <button id="bt7"></button>
-    <button id="bt8"></button>
-    <button id="bt9"></button>
-</div>
+<form action="" method="post" class="container">
+    <?php foreach ($btnList as $bt): ?>
+        <?php if ($winner === "User"): ?>
+            <button type="submit" name="button" disabled value="<?= $bt ?>"><?= $_SESSION[$bt] ?></button>
+        <?php else: ?>
+            <button type="submit" name="button" value="<?= $bt ?>"><?= $_SESSION[$bt] ?></button>
+        <?php endif ?>
+    <?php endforeach; ?>
+</form>
+<form action="" method="post">
+    <button type="submit" name="clear">Clear</button>
+</form>
+<?php if ($winner === "User"): ?>
+    <div id="result">Winner is User</div>
+<?php else: ?>
+    <div id="result"></div>
+<?php endif; ?>
+<?php var_dump($_SESSION["userMove"]) ?>
 </body>
 </html>
